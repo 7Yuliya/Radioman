@@ -30,7 +30,7 @@ public class Radio {
     public void prevCurrentRadioNumber() {
         if (currentRadioNumber > 0) {
             currentRadioNumber = currentRadioNumber - 1;
-        } else  {
+        } else {
             currentRadioNumber = 9;
         }
 
@@ -63,10 +63,12 @@ public class Radio {
     }
 
     public void decreaseVolume() {
-        if (currentVolume == 10) {
+        if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
+        } else {
+            currentRadioNumber = 0;
         }
-    }
 
+    }
 }
 
