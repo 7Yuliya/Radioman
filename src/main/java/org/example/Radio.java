@@ -28,7 +28,9 @@ public class Radio {
     }
 
     public void prevCurrentRadioNumber() {
-        if (currentRadioNumber == 0) {
+        if (currentRadioNumber > 0) {
+            currentRadioNumber = currentRadioNumber - 1;
+        } else  {
             currentRadioNumber = 9;
         }
 

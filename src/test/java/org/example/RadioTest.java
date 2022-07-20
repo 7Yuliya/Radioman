@@ -40,9 +40,9 @@ public class RadioTest {
     @Test
     public void shouldSetPrevCurrentRadioNumberNoEqualTo0() {
         Radio radio = new Radio();
-        radio.setCurrentRadioNumber(2);
+        radio.setCurrentRadioNumber(5);
         radio.prevCurrentRadioNumber();
-        int expected = 2;
+        int expected = 4;
         int actual = radio.getCurrentRadioNumber();
         Assertions.assertEquals(expected, actual);
     }
