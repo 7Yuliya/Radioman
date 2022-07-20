@@ -21,9 +21,7 @@ public class Radio {
     public void nextCurrentRadioNumber() {
         if (currentRadioNumber < 9) {
             currentRadioNumber = currentRadioNumber + 1;
-        }
-
-        if (currentRadioNumber == 9) {
+        } else {
             currentRadioNumber = 0;
         }
 
@@ -53,7 +51,6 @@ public class Radio {
         }
         currentVolume = newCurrentVolume;
     }
-
 
 
     public void increaseVolume() {
