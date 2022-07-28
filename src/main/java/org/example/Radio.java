@@ -1,25 +1,62 @@
 package org.example;
 
 public class Radio {
-    public int currentRadioNumber;
-    public int maxCurrentRadioNumber = 9;
-    public int minCurrentRadioNumber = 0;
+    private int currentRadioNumber;
+    private int currentVolume;
+    private int numberOfRadioStations;
+
+    public Radio() {
+        numberOfRadioStations = 10;
+    }
+
+    public Radio(int numberOfRadioStations) {
+
+        this.numberOfRadioStations = numberOfRadioStations;
+
+    }
+
 
     public int getCurrentRadioNumber() {
+
         return currentRadioNumber;
     }
 
-    public void setCurrentRadioNumber(int newCurrentRadioNumber) {
-
-        if (newCurrentRadioNumber > 9) {
+    public void setCurrentRadioNumber(int currentRadioNumber) {
+        if (currentRadioNumber < 0) {
             return;
         }
-        currentRadioNumber = newCurrentRadioNumber;
+        if (currentRadioNumber > numberOfRadioStations - 1) {
+            return;
+        }
+        this.currentRadioNumber = currentRadioNumber;
 
     }
 
-    public void nextCurrentRadioNumber() {
-        if (currentRadioNumber < 9) {
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public void setCurrentVolume(int currentVolume) {
+
+        if (currentVolume < 0) {
+            return;
+        }
+        if (currentVolume > 100) {
+            return;
+        }
+        this.currentVolume = currentVolume;
+    }
+
+
+    public int getNumberOfRadioStations() {
+        return numberOfRadioStations;
+
+
+    }
+
+
+    public void next() {
+        if (currentRadioNumber < numberOfRadioStations - 1) {
             currentRadioNumber = currentRadioNumber + 1;
         } else {
             currentRadioNumber = 0;
@@ -27,36 +64,18 @@ public class Radio {
 
     }
 
-    public void prevCurrentRadioNumber() {
+    public void prev() {
         if (currentRadioNumber > 0) {
             currentRadioNumber = currentRadioNumber - 1;
         } else {
-            currentRadioNumber = 9;
+            currentRadioNumber = numberOfRadioStations - 1;
+
         }
-
-
-    }
-
-
-    public int currentVolume;
-    public int maxCurrentVolume = 10;
-    public int minCurrentVolume = 0;
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    public void setCurrentVolume(int newCurrentVolume) {
-
-        if (newCurrentVolume > 10) {
-            return;
-        }
-        currentVolume = newCurrentVolume;
     }
 
 
     public void increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
         }
 
@@ -69,6 +88,9 @@ public class Radio {
             currentRadioNumber = 0;
         }
 
+
     }
+
 }
+
 
