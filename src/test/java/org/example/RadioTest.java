@@ -145,7 +145,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
     @Test
-    public void shouldSetCurrentRadioNumberEqualTo() {
+    public void shouldSetCurrentRadioNumberLessThen0() {
         Radio radio = new Radio();
         radio.setCurrentRadioNumber(-1);
         int expected = 0;
@@ -153,7 +153,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
     @Test
-    public void shouldSetCurrentVolumeEqualTo() {
+    public void shouldSetCurrentVolumeLessThen0() {
         Radio radio = new Radio();
         radio.setCurrentVolume(-1);
         int expected = 0;
